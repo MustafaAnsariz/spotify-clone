@@ -1,0 +1,8 @@
+[
+  { "id": "ncs", "path": "songs/ncs" },
+  { "id": "cs", "path": "songs/cs" },
+  { "id": "dance", "path": "songs/dance" },
+  { "id": "love", "path": "songs/love" },
+  { "id": "max", "path": "songs/max" },
+  { "id": "❤️", "path": "songs/❤️" }
+]
