@@ -39,14 +39,14 @@ async function getSongs(folderPath) { // folderPath will be like "songs/ncs"
       songUl.innerHTML += `
         <li data-songfile="${songFile}"> 
           <div class="song-data">
-            <img class="invert" src="img/music.svg" alt="">
+            <img class="invert" src="Img/music.svg" alt="">
             <div class="info">
               <div class="song-name">${displayName}</div>
               <div class="artist">Mustafa</div> 
             </div>
           </div>
           <div class="play-main">
-            <img src="img/play.svg" alt="">
+            <img src="Img/play.svg" alt="">
           </div>
         </li>`;
     }
@@ -70,7 +70,7 @@ const playMusic = (songFilename, pause = false) => {
   if (!songFilename) { // Handle cases where no song name is provided
     console.warn("playMusic called with no songFilename");
     currentSong.pause();
-    play.src = "img/play.svg";
+    play.src = "Img/play.svg";
     document.querySelector(".song-info").innerHTML = "No song selected";
     document.querySelector(".song-time").innerHTML = "00:00 / 00:00";
     document.querySelector(".circle").style.left = "0%";
@@ -83,11 +83,11 @@ const playMusic = (songFilename, pause = false) => {
 
   if (!pause) {
     currentSong.play().catch(e => console.error("Error playing audio:", e)); // Added catch for play promise
-    play.src = "img/pause.svg";
+    play.src = "Img/pause.svg";
   } else {
     // If pause is true, we just load the song but don't play it.
     // The UI for play button should reflect that it's ready to play (showing play icon).
-    play.src = "img/play.svg";
+    play.src = "Img/play.svg";
   }
 
   document.querySelector(".song-info").innerHTML = decodeURI(songFilename.replace(/\.mp3$/i, ""));
@@ -134,10 +134,10 @@ async function main() {
   play.addEventListener("click", () => {
     if (currentSong.paused) {
       currentSong.play().catch(e => console.error("Error playing audio:", e));
-      play.src = "img/pause.svg";
+      play.src = "Img/pause.svg";
     } else {
       currentSong.pause();
-      play.src = "img/play.svg";
+      play.src = "Img/play.svg";
     }
   });
 
